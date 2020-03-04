@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <html>
+    <head>
+      <meta charset="utf-8">
+
+      <!-- main a-frame library -->
+      <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+      <!-- physics library -->
+      <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+      <!-- particle system library -->
+      <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+      <!-- environment library -->
+      <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+      <!-- text geometry library -->
+      <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+      <!-- extras library -->
+      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    </head>
+
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="skyTexture" src="sky.jpg">
+        <img id="wallTexture" src="wall.jpg">
+        <img id="sandTexture" src="sand.jpg">
+        <a-asset-item id="bell-obj" src="churchbell.obj"></a-asset-item>
+        <audio id="bells" src="Wind-chimes-sound.mp3" preload="auto"></audio>
+        <a-asset-item id="cage-obj" src="Cage.obj"></a-asset-item>
+        <a-asset-item id="cage-mtl" src="Cage.mtl"></a-asset-item>
+        <a-asset-item id="fountain-obj" src="fountain.obj"></a-asset-item>
+        <a-asset-item id="fountain-mtl" src="fountain.mtl"></a-asset-item>
+        <a-asset-item id="house-obj" src="house.obj"></a-asset-item>
+        <img id="oceanTexture" src="ocean.png">
+        <a-asset-item id="ocean-obj" src="Ocean.obj"></a-asset-item>
+      </a-assets>
+
+//rightwall
+      <a-entity
+        static-body geometry = "primitive: box"
+        scale = "200 5 0.1"
+        position = "101 1.5 -5"
+        material = "src:#wallTexture">
+      </a-entity>
+
+//leftwall
+      <a-entity
+        static-body geometry = "primitive: box"
+        scale = "10 5 0.1"
+        position = "-5 1.5 -5"
+        material = "src:#wallTexture">
+      </a-entity>
+
+      <a-entity
+        static-body geometry = "primitive: box"
+        scale = "400 200 90"
+        position = "0 -100 -30"
+        material = "src:#sandTexture">
+      </a-entity>
+
+//bells
+      <a-entity
+        obj-model="obj: #bell-obj"
+        position="4.614 2.798 -5.832"
+        rotation="0 0 0"
+        scale="0.001 0.001 0.001"
+        material = "color:#FFD700"
+        animation="property: rotation;
+               to: 0 360 0;
+               dur: 3500;
+               easing: linear;
+               loop: true;"
+        sound="src:#bells">
+      </a-entity>
+
+      <a-entity
+        obj-model="obj: #bell-obj"
+        position="4.95 2.798 -5.7"
+        rotation="30 0 30"
+        scale="0.001 0.001 0.001"
+        material = "color:#C0C0C0"
+        animation="property: rotation;
+               to: 360 0 0;
+               dur: 3000;
+               easing: linear;
+               loop: true;"
+        sound="src:#bells">
+      </a-entity>
+
+      <a-entity
+        obj-model="obj: #bell-obj"
+        position="4.8 2.3 -5.7"
+        rotation="0 40 0"
+        scale="0.001 0.001 0.001"
+        material = "color:#FFD700"
+        animation="property: rotation;
+               to: 0 0 360;
+               dur: 3000;
+               easing: linear;
+               loop: true;"
+        sound="src:#bells">
+      </a-entity>
+
+//Cage
+      <a-entity
+        obj-model="obj: #cage-obj; mtl: #cage-mtl"
+        position="4 2.4 -5.7"
+        rotation="-90 0 0"
+        scale="0.01 0.01 0.01">
+      </a-entity>
+
+//houes
+      <a-entity
+        obj-model="obj: #house-obj"
+        material="color:#0000A0"
+        position="9 1.767 -20"
+        rotation="-90 -45 90"
+        scale="0.02 0.02 0.02">
+      </a-entity>
+//fountain
+      <a-entity
+        obj-model="obj: #fountain-obj"
+        material:"color:#0000A0"
+        position="0 0.1 -12.7"
+        rotation="0 0 0"
+        scale="0.1 0.1 0.1">
+      </a-entity>
+
+      <a-sky src="#skyTexture"></a-sky>
+
+      <!-- <a-sky <a-sky color="#b491c8"></a-sky> -->
+//texts
+      <a-text
+    value="I train to fight angels in a monastery by the sea."
+    color="#DCDCDC"
+    position="0 2.5 -2"
+    align="center"
+    animation="property: opacity;
+    from: 0;
+    to: 1;
+    dur: 3000;
+    loop false;">
+      </a-text>
+//ocean
+      <a-entity
+        obj-model="obj: #ocean-obj"
+        material ="src:#oceanTexture"
+        position="-50 0.2 -40"
+        rotation="0 0 0"
+        scale="20 30 20">
+      </a-entity>
+
+<a-entity position="-15 2.25 -20" particle-system="preset: snow; scale: 0.5; color: #44CC00; particleCount: 10000;maxAge:10; size: 2; positionSpread: 0 0 0"
+></a-entity>
+
+    </a-scene>
+  </body>
+</html>
