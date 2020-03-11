@@ -39,11 +39,15 @@ function setup(){
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.style("z-index", "-2");
   canvas.position(0,0);
+  instruction = createP('<font face="arial" id="instructionP" color="white" font size="6">try to do work with all the distractions!</font>');
+  instruction.position(windowWidth/2, 100);
+  insturction.hide();
   canvas.mousePressed(start);
   }
 
 function start(){
     startGame = true;
+
   }
 
 function stickyCursor(){
@@ -52,10 +56,6 @@ function stickyCursor(){
     frameRate(150);
     background(125, 94, 99);
     image(phoneBackground2,0,0, 414, 735);
-    if(instruction == false){
-      instruction = createDiv('<font face="arial" id="instructionP" color="white" font size="6">try to do work with all the distractions!</font>');
-      instruction.position(windowWidth/2, 100);
-    }
 
     let cursorX = 100+10*(mouseX - pmouseX);
     let cursorY = 100+12*(mouseY - pmouseY);
