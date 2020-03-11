@@ -41,7 +41,7 @@ function setup(){
   canvas.position(0,0);
   instruction = createP('<font face="arial" id="instructionP" color="white" font size="6">try to do work with all the distractions!</font>');
   instruction.position(windowWidth/2, 100);
-  insturction.hide();
+  instruction.hide();
   canvas.mousePressed(start);
   }
 
@@ -56,7 +56,7 @@ function stickyCursor(){
     frameRate(150);
     background(125, 94, 99);
     image(phoneBackground2,0,0, 414, 735);
-
+    instruction.show();
     let cursorX = 100+10*(mouseX - pmouseX);
     let cursorY = 100+12*(mouseY - pmouseY);
 
@@ -86,6 +86,7 @@ function stickyCursor(){
 function endscreen1(){
   background(255,0,0);
   image(boss,0,0, windowWidth, windowHeight);
+  instruction.hide();
 
 }
 
