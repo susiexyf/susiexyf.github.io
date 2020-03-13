@@ -13,11 +13,12 @@ let warning;
 let boss;
 let endGame2 = false;
 let bomb;
-let epilogueText;
+let epilogueText = false;
 let line2Text;
 let backButton;
 let otherButton;
 let instruction = false;
+let instruction2 = false;
 let theend;
 let endGame3 = false;
 let endImage;
@@ -31,18 +32,49 @@ function preload(){
   bomb = loadImage("Images/bomb.gif");
   // warning = createP("YOU ARE A HORRIBLE EMPLOYEE");
   // warning.hide();
-
 }
 
 function setup(){
-  noCursor();
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.style("z-index", "-2");
   canvas.position(0,0);
-  instruction = createP('<font face="arial" id="instructionP" color="white" font size="6">try to do work with all the distractions!</font>');
+
+  noCursor();
+  instruction = createP('<font face="arial" id="instructionP" color="white" font size="6">Do work with all the distractions!</font>');
   instruction.position(windowWidth/2, 100);
   instruction.hide();
+  instruction2 = createP('<font face="arial" id="instructionP" color="white" font size="6">Try to click on your work email!</font>');
+  instruction2.position(windowWidth/2, 130);
+  instruction2.hide();
   canvas.mousePressed(start);
+
+  epilogueText = createP("Congratulations! You are a productive member of society!");
+  epilogueText.position(windowWidth/3,200);
+  line2Text = createP("You perform your duty as a tax-payer!");
+  line2Text.position(windowWidth/3,250);
+  line3Text = createP("You ignore your duty as a citizen!");
+  line3Text.position(windowWidth/3,300);
+  line4Text = createP("You will miss out on tonight's dinner!");
+  line4Text.position(windowWidth/3,350);
+  line5Text = createP("You will be forever alone!!");
+  line5Text.position(windowWidth/3,400);
+  backButton = createButton('Continue to waste time');
+  backButton.position(500, 500);
+  backButton.style('background','coral','font color','white');
+  backButton.mousePressed(resetSketch);
+  otherButton = createButton('keep on working');
+  otherButton.position(800, 500);
+  otherButton.style('background','coral','font color','white');
+  // backButton.mousePressed(stickyCursor);
+  otherButton.mousePressed(ending);
+
+  epilogueText.hide();
+  line2Text.hide();
+  line3Text.hide();
+  line4Text.hide();
+  line5Text.hide();
+  backButton.hide();
+  otherButton.hide();
   }
 
 function start(){
@@ -57,6 +89,7 @@ function stickyCursor(){
     background(125, 94, 99);
     image(phoneBackground2,0,0, 414, 735);
     instruction.show();
+    instruction2.show();
     let cursorX = 100+10*(mouseX - pmouseX);
     let cursorY = 100+12*(mouseY - pmouseY);
 
@@ -87,33 +120,24 @@ function endscreen1(){
   background(255,0,0);
   image(boss,0,0, windowWidth, windowHeight);
   instruction.hide();
-
+  instruction2.hide();
 }
 
 function endscreen2(){
   cursor();
   instruction.hide();
+  instruction2.hide();
   image(finger, mouseX, mouseY, 50, 50);
   background(0);
   image(bomb,0, 0, windowWidth, windowHeight);
-  epilogueText = createP("Congratulations! You are a productive member of society!");
-  epilogueText.position(windowWidth/3,200);
-  line2Text = createP("You perform your duty as a tax-payer!");
-  line2Text.position(windowWidth/3,250);
-  line3Text = createP("You ignore your duty as a citizen!");
-  line3Text.position(windowWidth/3,300);
-  line4Text = createP("You will miss out on tonight's dinner!");
-  line4Text.position(windowWidth/3,350);
-  line5Text = createP("You will be forever alone!!");
-  line5Text.position(windowWidth/3,400);
-  // backButton = createButton('go back to wasting time but feel guilty');
-  // backButton.position(500, 500);
-  // backButton.style('background','coral','font color','white');
-  otherButton = createButton('keep on working');
-  otherButton.position(600, 500);
-  otherButton.style('background','coral','font color','white');
-  // backButton.mousePressed(stickyCursor);
-  otherButton.mousePressed(ending);
+
+  epilogueText.show();
+  line2Text.show();
+  line3Text.show();
+  line4Text.show();
+  line5Text.show();
+  backButton.show();
+  otherButton.show();
 }
 
 function ending(){
@@ -122,9 +146,32 @@ function ending(){
   background(0);
   otherButton.hide();
   backButton.hide();
-  // image(boss,windowWidth,windowHeight);
-  // end = createP('You are a model worker');
-  // end.posisiton(200,500);
+
+  epilogueText.hide();
+  line2Text.hide();
+  line3Text.hide();
+  line4Text.hide();
+  line5Text.hide();
+
+  backButton.hide();
+  otherButton.hide();
+}
+
+function  resetSketch(){
+  startGame = false;
+  endGame2 = false;
+  backButton.hide();
+  otherButton.hide();
+  epilogueText.hide();
+  line2Text.hide();
+  line3Text.hide();
+  line4Text.hide();
+  line5Text.hide();
+  noCursor();
+  background(255,255,255);
+  image(phoneBackground, 0,0, 414, 735);
+  image(finger, mouseX, mouseY, 50, 50);
+  canvas.mousePressed(start);
 }
 
 function draw(){
