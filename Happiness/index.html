@@ -30,28 +30,91 @@
   <body>
 
     <!-- Create a 3D scene -->
-    <a-scene cursor="rayOrigin: mouse">
+    <a-scene cursor="rayOrigin: mouse" physics>
 
       <a-assets>
-        <img id="skyTexture" src="attempt.jpg">
+        <img id="skyTexture" src="sky.jpg">
+        <img id="attempt" src="attempt.jpg">
+        <a-asset-item id="man-obj" src="model/man.obj"></a-asset-item>
+        <a-asset-item id="woman-obj" src="model/woman.obj"></a-asset-item>
+        <a-asset-item id="baby-obj" src="model/baby.obj"></a-asset-item>
+        <a-asset-item id="baby-mtl" src="model/baby.mtl"></a-asset-item>
 
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+
+<!--
+
+
+        <a-asset-item id="cage-mtl" src="Cage.mtl"></a-asset-item>
+        <a-asset-item id="fountain-obj" src="fountain.obj"></a-asset-item>
+        <a-asset-item id="fountain-mtl" src="fountain.mtl"></a-asset-item>
+        <a-asset-item id="house-obj" src="house.obj"></a-asset-item> -->
       </a-assets>
+      <a-sky src="#skyTexture"></a-sky>
 
-      <a-entity position="0 1.8 4">
+      <a-entity position="0 11 0">
         <a-camera>
-
         <a-camera>
       </a-entity>
 
+      <a-entity
+      obj-model="obj: #man-obj"
+      position = "2 0 -20"
+      scale="0.09 0.09 0.09"
+      rotation="-90 0 0"
+      material="color: yellow"
+      animation="property: position; to: -23 0 30; dur: 10000; easing: linear; loop: true"
+      >
+      </a-entity>
 
-      <a-entity id="mainImg"
-      geometry="primitive: plane; width: 2; height: 2;"
-      material="src: #skyTexture;"
-      position="4 1.25 -2"
+      <a-entity
+      obj-model="obj: #woman-obj"
+      position = "3 0 -10"
+      scale="0.09 0.09 0.09"
+      rotation="-90 0 0"
+      material="color: FireBrick"
+      animation="property: position; to: -64 0 -82; dur: 200000; easing: linear; loop: true"
+      >
+      </a-entity>
+      <a-entity
+      obj-model="obj: #woman-obj"
+      position = "-10 0 -10"
+      scale="0.09 0.09 0.09"
+      rotation="-90 0 0"
+      material="color: outrageousOrange"
+      animation="property: position; to: 20 0 82; dur: 1000; easing: linear; loop: true"
+      >
+      </a-entity>
+
+      <a-entity
+      obj-model="obj: #man-obj"
+      position = "2 0 10"
+      scale="0.09 0.09 0.09"
+      rotation="-90 0 0"
+      material="color: sunglow"
+      animation="property: position; to: 6 0 340; dur: 10000; easing: linear; loop: true"
+      >
+      </a-entity>
+
+      <a-entity
+      text-geometry="value: COME TO WORK; font: #optimerBoldFont"
+      scale ="3 3 3"
+      material="color: #c16476;"
+      position="20 14 -20"
+      rotation="0 -30 0"
       href="P5/email.html"
       >
       </a-entity>
 
+      <a-entity
+      text-geometry="value: SIT DOWN AT LUNCH; font: #optimerBoldFont"
+      scale ="3 3 3"
+      material="color: #2eb4a9;"
+      position="30 9 20"
+      rotation="0 170 0"
+      href="P5/web.html"
+      >
+      </a-entity>
 
 
 
