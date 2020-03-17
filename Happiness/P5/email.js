@@ -597,7 +597,7 @@ function draw(){
     image(cong,windowWidth/2, windowHeight/2);
     ending = createP('<font face="Georgia" color="#87CEEB" font size="5">You have acquired your daily does of the feeling of achievement :)</font>');
     ending.position(100,100);
-    link = createA("http://susiexyf.github.io/Happiness", "Back to the real world");
+    link = createA("http://susiexyf.github.io/Happiness", "Back to the real world (http://susiexyf.github.io/Happiness)");
     link.position(100,200);
   }
 }

@@ -495,7 +495,7 @@ function draw (){
           ending.position(500,100);
           ending2 = createP('<font face="Georgia" color="#87CEEB" font size="5">But are you really happy?</font>');
           ending2.position(500,300);
-          link = createA("http://susiexyf.github.io/Happiness", "Back to the real world");
+          link = createA("http://susiexyf.github.io/Happiness", "Back to the real world (http://susiexyf.github.io/Happiness)");
           link.position(windowWidth/2,500);
   }
 }

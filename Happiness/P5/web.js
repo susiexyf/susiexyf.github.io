@@ -378,7 +378,7 @@ function timelineFinal(){
 
   ending = createP('<font face="Georgia" color="#87CEEB" font size="5">You have acquired you daily dose of happiness!!</font>');
   ending.position(windowWidth/4,100);
-  link = createA("http://susiexyf.github.io/Happiness", "Back to the real world");
+  link = createA("http://susiexyf.github.io/Happiness", "Back to the real world (http://susiexyf.github.io/Happiness)");
   link.position(windowWidth/4,200);
 
   let sources = createP('<font face="Georgia" color="brown" font size="3.5">Special thanks to the Atlantic, the New York Times, and Buzzfeed for providing titles used here.</font>');
