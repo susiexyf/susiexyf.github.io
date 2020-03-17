@@ -130,7 +130,7 @@ function email1(){
   e1Button.hide();
 
   instruction2 = createP('<font face="Georgia" color ="#F08080" font size="3">copy in the following response and *click reply*</font>');
-  instruction3 = createP('<font face="Georgia" color ="#F08080" font size="3">if you type in something different, it will not be counted as an answered email</font>');
+  instruction3 = createP('<font face="Georgia" color ="#F08080" font size="3">if you type in something different or do not click on the button, it will not be counted as an answered email</font>');
   instruction2.position(700, 200);
   instruction3.position(700, 240);
   replySelect = random(replies);
