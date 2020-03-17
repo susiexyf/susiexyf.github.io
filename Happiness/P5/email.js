@@ -51,6 +51,8 @@ let cong;
 let link;
 let ending;
 
+let button;
+
 // let replyButton;
 var score = 0;
 let scoreText;
@@ -63,6 +65,8 @@ function convertSeconds(s) {
 
 function preload(){
   cong = loadImage("cong.gif");
+  bgm = loadSound('pirate.mp3');
+
 }
 
 function setup(){
@@ -91,6 +95,7 @@ function emailGame(){
   intro.hide();
   instruction = createP('<font face="Verdana" font-weight="bold" color="#800000" font size="5">You have 1 minute to answer 10 emails. GO! </font>');
 
+  bgm.play();
 
    var timer = select('#timer');
    timer.html(convertSeconds(timeleft - counter));
@@ -103,10 +108,18 @@ function emailGame(){
      if (counter == timeleft){
        clearInterval(interval);
        counter = 0;
+       if(score < 10){
+         failure();
+       } if (score >= 10){
+         endPage();
+       }
      }
    }
 
-
+function failure(){
+  button = createButton('TRY AGAIN');
+  button.mousePressed(restart2);
+}
   //email
   e1Button = createButton('<font face="Arial" color="black" font size="5">[Research Project You Work For] Have you cleaned up the three excel files for this week</font>');
   e1Button.position(0,200);
@@ -523,6 +536,7 @@ function restart(){
   scoreText.show();
   background("color:white");
   startGame = true;
+  button.hide();
 
   //email
   e1Button = createButton('<font face="Arial" color="black" font size="5">[Research Project You Work For] Have you cleaned up the three excel files for this week</font>');
@@ -531,12 +545,54 @@ function restart(){
 
 }
 
+function  restart2(){
+  submit.hide();
+  message.hide();
+  messageend.hide();
+  messagebody.hide();
+  response.hide();
+  instruction2.hide();
+  instruction3.hide();
+  replyInstruction.hide();
+  scoreText.show();
+  background("color:white");
+  startGame = true;
+  button.hide();
+
+  //email
+  e1Button = createButton('<font face="Arial" color="black" font size="5">[Research Project You Work For] Have you cleaned up the three excel files for this week</font>');
+  e1Button.position(0,200);
+  e1Button.mousePressed(email1);
+
+  counter = 0;
+  timeleft = 60;
+  var timer = select('#timer');
+  timer.html(convertSeconds(timeleft - counter));
+
+  var interval = setInterval(timeIt, 1000);
+
+  function timeIt(){
+    counter++;
+    timer.html(convertSeconds(timeleft - counter));
+    if (counter == timeleft){
+      clearInterval(interval);
+      counter = 0;
+      if(score < 10){
+        failure();
+      } if (score >= 10){
+        endPage();
+      }
+    }
+
+}
+}
+
 function draw(){
   if (endGame === true){
     background(240, 128, 128);
     ending = createP('<font face="Georgia" color="#87CEEB" font size="3">You finished your emailing task today, you can look up from your screen now :)</font>');
     ending.position(100,100);
-    link = createA("http://susiexyf.github.io/Happiness/index.html", "Back to the real world");
+    link = createA("http://susiexyf.github.io/Happiness", "Back to the real world");
     link.position(100,200);
     image(cong,windowWidth/2, windowHeight/2);
   }
