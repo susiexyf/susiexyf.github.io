@@ -70,11 +70,11 @@ function preload(){
 }
 
 function setup(){
-  background(220);
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.style('z-index', '-1');
   canvas.position(0, 0);
-  intro = createP('<font face="Courier New" color="#855e42" font size="6">Good Morning! Coffee time is best email correspondence time!</font>');
+  background(220);
+  intro = createP('<font face="Courier New" color="#855e42" font size="6">Good Morning! Clearing out your inbox brings a instant sense of achievement!</font>');
   intro.position(150, 10);
   startButton = createButton('Sign in to Gmail');
   startButton.position((windowWidth/2)-20, 320);
@@ -158,7 +158,6 @@ function valuecheck (){
     score ++;
   }
   scoreText.html('email replied:' + score);
-
 }
 
 
@@ -594,10 +593,10 @@ function draw(){
 
   if (endGame === true){
     background(240, 128, 128);
-    ending = createP('<font face="Georgia" color="#87CEEB" font size="3">You finished your emailing task today, you can look up from your screen now :)</font>');
+    image(cong,windowWidth/2, windowHeight/2);
+    ending = createP('<font face="Georgia" color="#87CEEB" font size="5">You have acquired your daily does of the feeling of achievement :)</font>');
     ending.position(100,100);
     link = createA("http://susiexyf.github.io/Happiness", "Back to the real world");
     link.position(100,200);
-    image(cong,windowWidth/2, windowHeight/2);
   }
 }
