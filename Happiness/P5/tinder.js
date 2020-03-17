@@ -8,7 +8,7 @@ let instruction;
 let instruction2;
 
 var counter = 0;
-var timeleft = 5;
+var timeleft = 30;
 var timer;
 
 let homepage
@@ -81,7 +81,7 @@ function setup(){
   startButton.style('background','coral','font color','white');
   startButton.mousePressed(tinder);
 
-  instruction = createP('<font face="Lucida Console	"color="white" font size="4">~~ get 5 matches under 45 seconds to recieve necessary vaildation ~~</font>')
+  instruction = createP('<font face="Lucida Console	"color="white" font size="4">~~ get 5 matches under 30 seconds to recieve necessary vaildation ~~</font>')
   instruction.position(500, windowHeight-40);
   instruction.hide();
   scoreText = createP('');
@@ -439,7 +439,7 @@ function restart2 (){
   score = 0;
 
    counter = 0;
-   timeleft = 10;
+   timeleft = 30;
    var timer = select('#timer');
    timer.html(convertSeconds(timeleft - counter));
 
