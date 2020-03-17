@@ -52,7 +52,7 @@ let image1;
 
 
 var counter = 0;
-var timeleft = 20;
+var timeleft = 60;
 var timer;
 
 let message;

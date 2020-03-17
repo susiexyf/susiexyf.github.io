@@ -53,7 +53,6 @@ let ending;
 
 let button;
 
-// let replyButton;
 var score = 0;
 let scoreText;
 
@@ -559,6 +558,8 @@ function  restart2(){
   e1Button = createButton('<font face="Arial" color="black" font size="5">[Research Project You Work For] Have you cleaned up the three excel files for this week</font>');
   e1Button.position(0,200);
   e1Button.mousePressed(email1);
+
+  score = 0;
 
   counter = 0;
   timeleft = 60;
