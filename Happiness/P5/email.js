@@ -66,7 +66,7 @@ function convertSeconds(s) {
 function preload(){
   cong = loadImage("cong.gif");
   bgm = loadSound('pirate.mp3');
-
+  mail = loadImage('mail.png');
 }
 
 function setup(){
@@ -89,7 +89,6 @@ function setup(){
 
 function emailGame(){
   scoreText.show();
-  background("color:white");
   startGame = true;
   startButton.hide();
   intro.hide();
@@ -128,8 +127,6 @@ function failure(){
 }
 
 function email1(){
-
-  background("color:white");
   e1Button.hide();
 
   instruction2 = createP('<font face="Georgia" color ="#F08080" font size="3">copy in the following response and *click reply*</font>');
@@ -181,7 +178,7 @@ function inbox2Page(){
 }
 
 function email2 (){
-    background("color:white");
+
     e2Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -219,7 +216,7 @@ function inbox3Page(){
 }
 
 function email3 (){
-    background("color:white");
+
     e3Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -257,7 +254,7 @@ function inbox4Page(){
 }
 
 function email4 (){
-    background("color:white");
+
     e4Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -295,7 +292,7 @@ function inbox5Page(){
 }
 
 function email5 (){
-    background("color:white");
+
     e5Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -334,7 +331,7 @@ function inbox6Page(){
 
 
 function email6 (){
-    background("color:white");
+
     e6Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -372,7 +369,7 @@ function inbox7Page(){
 }
 
 function email7 (){
-    background("color:white");
+
     e7Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -410,7 +407,7 @@ function inbox8Page(){
 }
 
 function email8 (){
-    background("color:white");
+
     e8Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -448,7 +445,7 @@ function inbox9Page(){
 }
 
 function email9 (){
-    background("color:white");
+
     e9Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -483,7 +480,7 @@ function inbox10Page(){
 }
 
 function email10 (){
-    background("color:white");
+
     e10Button.hide();
     replySelect = random(replies);
     replyInstruction = createP(replySelect);
@@ -534,7 +531,7 @@ function restart(){
   instruction3.hide();
   replyInstruction.hide();
   scoreText.show();
-  background("color:white");
+
   startGame = true;
   button.hide();
 
@@ -555,7 +552,7 @@ function  restart2(){
   instruction3.hide();
   replyInstruction.hide();
   scoreText.show();
-  background("color:white");
+
   startGame = true;
   button.hide();
 
@@ -588,6 +585,13 @@ function  restart2(){
 }
 
 function draw(){
+  stroke(156, 42,42);
+  if(startGame === true){
+  background(232, 244, 248);
+  line(0,150,windowWidth,150);
+  image(mail,windowWidth-200,20,170,120);
+}
+
   if (endGame === true){
     background(240, 128, 128);
     ending = createP('<font face="Georgia" color="#87CEEB" font size="3">You finished your emailing task today, you can look up from your screen now :)</font>');
