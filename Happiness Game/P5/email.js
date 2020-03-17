@@ -1,8 +1,6 @@
 let canvas;
 let startButton;
 let startGame = false;
-let startLunch = false;
-let startTinder = false;
 let inboxPage;
 let happyNumber = 0;
 let exhautionNumber = 0;
@@ -30,47 +28,67 @@ let e8Page;
 let e9Page;
 let e10Page;
 let emailEndPage;
-let lunchPage;
-let new1Button;
-let new2Button;
-let new3Button;
-let newsPage1;
-let newsPage2;
-let newsPage3;
-let new4Button;
-let new5Button;
-let new6Button;
-let newsPage4;
-let newsPage5;
-let newsPage6;
+
+// let timer = 10;
+// let countDownSwitch = false;
+let intro;
+var counter = 0;
+var timeleft = 300;
+var timer;
+
+function convertSeconds(s) {
+  var min = floor(s / 60);
+  var sec = s % 60;
+  return nf(min,2) + ':' + nf(sec,2);
+}
 
 function preload(){
 
 }
 
 function setup(){
+  background(220);
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.style('z-index', '-1');
   canvas.position(0, 0);
-  let intro = createP('<font face="Courier New" color="#855e42" font size="6">Good Morning! Coffee time is best email correspondence time!</font>');
+  intro = createP('<font face="Courier New" color="#855e42" font size="6">Good Morning! Coffee time is best email correspondence time!</font>');
   intro.position(150, 10);
   startButton = createButton('Sign in to Gmail');
   startButton.position(680, 320);
   startButton.style('background','coral','font color','white');
   startButton.mousePressed(emailGame);
+
+
 }
 
 function emailGame(){
-  background(220);
   startGame = true;
-  // intro.hide();
   startButton.hide();
+  intro.hide();
+
+  //countdown
+   var timer = select('#timer');
+   timer.html(convertSeconds(timeleft - counter));
+
+   var interval = setInterval(timeIt, 1000);
+
+   function timeIt(){
+     counter++;
+     timer.html(convertSeconds(timeleft - counter));
+     if (counter == timeleft){
+       clearInterval(interval);
+       counter = 0;
+     }
+   }
+
+//emails
   e1Button = createButton('<font face="Arial" color="black" font size="5">[Research Project You Work For] Have you cleaned up the three excel files for this week</font>');
   e1Button.position(0,200);
   e1Button.mousePressed(email1);
 }
 
 function email1(){
+
   background("color:white");
   e1Button.hide();
   let message;
@@ -98,7 +116,11 @@ function email2 (){
 }
 
 function draw(){
-
+  // if (countDownSwitch == true && frameCount % 60 == 0 && timer > 0){
+  //   text(timer, 30, 30);
+  //   timer--;
+  // background("color:white");
+// }
   // if(emailreturn == true){
   //
   // }

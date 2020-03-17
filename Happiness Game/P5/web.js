@@ -1,0 +1,13 @@
+let lunchPage;
+let new1Button;
+let new2Button;
+let new3Button;
+let newsPage1;
+let newsPage2;
+let newsPage3;
+let new4Button;
+let new5Button;
+let new6Button;
+let newsPage4;
+let newsPage5;
+let newsPage6;
