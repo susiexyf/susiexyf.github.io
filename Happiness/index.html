@@ -52,6 +52,9 @@
       </a-assets>
       <a-sky src="#skyTexture"></a-sky>
 
+      <a-entity position="0 30 0" particle-system="preset: snow; scale: 1; color: #FAEBD7; particleCount: 10000;maxAge:10; size: 2; positionSpread: 0 0 0"
+      ></a-entity>
+
       <a-entity position="0 11 0">
         <a-camera>
         <a-camera>
@@ -72,26 +75,78 @@
       position = "3 0 -10"
       scale="0.09 0.09 0.09"
       rotation="-90 0 0"
-      material="color: FireBrick"
+      material="color: orange"
       animation="property: position; to: -64 0 -82; dur: 200000; easing: linear; loop: true"
       >
       </a-entity>
+
+      <a-entity
+      obj-model="obj: #woman-obj"
+      position = "-2 0 1"
+      scale="0.09 0.09 0.09"
+      rotation="-90 40 0"
+      material="color: purple"
+      animation="property: position; to: 92 0 -32; dur: 5000; easing: linear; loop: true"
+      >
+      </a-entity>
+
+      <a-entity
+      obj-model="obj: #man-obj"
+      position = "-20 0 -3"
+      scale="0.09 0.09 0.09"
+      rotation="-90 40 0"
+      material="color: green"
+      animation="property: position; to: 92 0 -32; dur: 8000; easing: linear; loop: true"
+      >
+      </a-entity>
+
+      <a-entity
+      obj-model="obj: #man-obj"
+      position = "40 0 -30"
+      scale="0.09 0.09 0.09"
+      rotation="-90 40 0"
+      material="color: blue"
+      animation="property: position; to: -70 0 -32; dur: 3800; easing: linear; loop: true"
+      >
+      </a-entity>
+
+      <a-entity
+      obj-model="obj: #man-obj"
+      position = "100 0 -10"
+      scale="0.09 0.09 0.09"
+      rotation="-90 40 0"
+      material="color: red"
+      animation="property: position; to: 10 0 800; dur: 3800; easing: linear; loop: true"
+      >
+      </a-entity>
+
+      <a-entity
+      obj-model="obj: #man-obj"
+      position = "-100 0 -80"
+      scale="0.09 0.09 0.09"
+      rotation="-90 80 0"
+      material="color: red"
+      animation="property: position; to: 0 0 300; dur: 4000; easing: linear; loop: true"
+      >
+      </a-entity>
+
       <a-entity
       obj-model="obj: #woman-obj"
       position = "-10 0 -10"
       scale="0.09 0.09 0.09"
       rotation="-90 0 0"
-      material="color: outrageousOrange"
+      material="color: #c16476;"
       animation="property: position; to: 20 0 82; dur: 1000; easing: linear; loop: true"
       >
       </a-entity>
+
 
       <a-entity
       obj-model="obj: #man-obj"
       position = "2 0 10"
       scale="0.09 0.09 0.09"
       rotation="-90 0 0"
-      material="color: sunglow"
+      material="color: yellow"
       animation="property: position; to: 6 0 340; dur: 10000; easing: linear; loop: true"
       >
       </a-entity>
@@ -116,6 +171,15 @@
       >
       </a-entity>
 
+      <a-entity
+      text-geometry="value: GO HOME; font: #optimerBoldFont"
+      scale ="3 3 3"
+      material="color: #00FFF;"
+      position="-1 9 30"
+      rotation="0 -180 0"
+      href="P5/tinder.html"
+      >
+      </a-entity>
 
 
 </a-scene>
