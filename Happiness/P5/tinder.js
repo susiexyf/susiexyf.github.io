@@ -87,7 +87,7 @@ function setup(){
   scoreText = createP('');
   scoreText.html('Matches:' + score);
   scoreText.size(4);
-  scoreText.position(550,windowHeight-100);
+  scoreText.position(550,windowHeight-80);
   scoreText.hide();
 
   p1 = createImg("Images/p1.jpg","image not loading");
@@ -406,7 +406,6 @@ function package10(){
 }
 
 function restart (){
-  bgm.play();
   bioText.hide()
   p10.hide();
   p1.show();
@@ -423,6 +422,7 @@ function restart (){
 
    theirChoice = random(choices);
    yes.mousePressed(package1);
+   no.mousePressed(tinder2);
 }
 
 // function ending(){
@@ -430,6 +430,7 @@ function restart (){
 // }
 
 function restart2 (){
+  bgm.stop();
   bgm.play();
   bioText.hide()
   p10.hide();
